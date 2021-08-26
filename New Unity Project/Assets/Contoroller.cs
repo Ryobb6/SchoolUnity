@@ -10,6 +10,8 @@ public class Contoroller : MonoBehaviour
     {
         Console.WriteLine("a");
         Console.WriteLine("b");
+        Console.WriteLine("c");
+
 
     }
 
