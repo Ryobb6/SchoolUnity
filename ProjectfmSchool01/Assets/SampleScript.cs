@@ -10,6 +10,7 @@ public class SampleScript : MonoBehaviour
     void Start()
     {
         Debug.Log("a");
+        Debug.Log("b");
     }
 
     // Update is called once per frame
