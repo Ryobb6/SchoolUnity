@@ -8,6 +8,7 @@ public class Shooter : MonoBehaviour
 
     public GameObject[] candyPrefabs;
     public Transform candyParentTransform;
+    public CandyManager candyManager;
     public float shotForce;
     public float shotTorque;
     public float baseWidth;
@@ -24,7 +25,7 @@ public class Shooter : MonoBehaviour
 
     GameObject SampleCandy()
     {
-        int index = Random.Range(0, candyPrefabs.Length); // Randomクラスのレンジメソッド
+        int index = Random.Range(0, candyPrefabs.Length); // RandomクラスのRange
         return candyPrefabs[index];
     }
 
@@ -36,6 +37,8 @@ public class Shooter : MonoBehaviour
 
     public void Shot()
     {
+        // キャンディを生成できる条件ならShotしない
+        if (candyManager.GetCandyAmount() <= 0) return;
         // PrefabからCandy Objectを生成　Gameオブジェクトはnewできない
         GameObject candy = (GameObject)Instantiate(
             SampleCandy(),
@@ -53,6 +56,9 @@ public class Shooter : MonoBehaviour
         candyRigidBody.AddForce(transform.forward * shotForce); // forwardプロパティは、
         //　そのオブジェクトが向いている方向(z軸のプラス方向)を取得できる
         candyRigidBody.AddTorque(new Vector3(0, shotTorque, 0));
+
+        // Shotされた場合、Candyのストックを消費
+        candyManager.ConsumeCandy();
 
     }
 }
