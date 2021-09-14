@@ -37,13 +37,13 @@ public class Shooter : MonoBehaviour
 
     public void Shot()
     {
-        // キャンディを生成できる条件ならShotしない
+        // キャンディを生成できない条件ならShotしない
         if (candyManager.GetCandyAmount() <= 0) return;
         // PrefabからCandy Objectを生成　Gameオブジェクトはnewできない
         GameObject candy = (GameObject)Instantiate(
             SampleCandy(),
             GetInstantiatePosition(),
-            //transform.position,
+            // transform.position,
             Quaternion.identity // Quaternionは回転を表現する構造体(.identityプロパティをGetすると、回転無し)
             );
 

@@ -16,12 +16,12 @@ public class CandyManager : MonoBehaviour
 
     public int GetCandyAmount()
     {
-        return candy;
+        return this.candy;
     }
 
     public void AddCandy(int amount)
     {
-        candy += amount;
+        this.candy += amount;
     }
 
     private void OnGUI()
