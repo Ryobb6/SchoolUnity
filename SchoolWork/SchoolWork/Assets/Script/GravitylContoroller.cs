@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BallContoroller : MonoBehaviour
+public class GravitylContoroller : MonoBehaviour
 {
     const float Gravity = 9.8f;
 
