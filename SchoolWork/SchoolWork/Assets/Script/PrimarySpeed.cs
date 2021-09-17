@@ -12,16 +12,17 @@ public class PrimarySpeed : MonoBehaviour
     void Start()
     {
         //----------------------------------------------------------------------------
-        // Add Force に与える 力 force の計算
+        // Add Force の第一引数に与える 力 force の計算
         //----------------------------------------------------------------------------
         
 
         Rigidbody rigidbody = this.gameObject.GetComponent<Rigidbody>();
-        float calcMass = rigidbody.mass;
+        //float calcMass = rigidbody.mass;
         // F(ベクトル) = ma　だが、Impulseで質量は考慮されるので抜き
         Vector3 primaryForce = primaryDirection * acceleration;
 
         // F = maに沿って、force を決定最初の瞬間だけ力を加える
+        // F(ベクトル) = ma　だが、Impulseで質量は考慮されるので抜き
         rigidbody.AddForce(primaryForce,ForceMode.Impulse);
     }
 
