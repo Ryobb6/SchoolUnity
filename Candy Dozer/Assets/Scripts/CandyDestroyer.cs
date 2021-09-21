@@ -6,6 +6,8 @@ public class CandyDestroyer : MonoBehaviour
 {
     public CandyManager candyManager;
     public int reward; // 生成できるオブジェクトのストック個数
+    public GameObject effectPrefab;
+    public Vector3 effectRotation;
 
    private void OnTriggerEnter(Collider other)
     {
