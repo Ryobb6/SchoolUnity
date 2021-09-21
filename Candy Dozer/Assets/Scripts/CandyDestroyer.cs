@@ -18,6 +18,18 @@ public class CandyDestroyer : MonoBehaviour
 
             //オブジェクトを削除
             Destroy(other.gameObject);
+
+            if(effectPrefab != null)
+            {
+                // Candyのポジションにエフェクトを生成
+                Instantiate(
+                    effectPrefab,
+                    other.transform.position,
+                    Quaternion.Euler(effectRotation)
+                    );
+
+            }
+
         }
     }
 }
