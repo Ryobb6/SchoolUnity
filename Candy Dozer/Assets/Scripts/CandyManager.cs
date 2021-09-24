@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CandyManager : MonoBehaviour
 {
-    const int DefaultCandyAmount = 30; // 定数で定める(変更不可)
+    const int DefaultCandyAmount = 30; // デフォルトのキャンディの数 : 定数で定める(変更不可)
     const int RecoverySeconds = 10; // Recoveryの秒数
 
 
@@ -46,24 +46,30 @@ public class CandyManager : MonoBehaviour
     private void Update()
     {
         // キャンディのストックがデフォルトより少なく、
-        // 回復カウントをしていないときにカウントをすたーとさせる
+        // 回復カウントをしていないときにカウントをスタートさせる
         if(candy < DefaultCandyAmount && counter <= 0)
         {
-            StartCoroutine(RecoverCandy());
+            StartCoroutine(RecoverCandy()); // この関数の処理が始まる
         }
 
     }
 
-    private IEnumerator RecoverCandy()
+    private IEnumerator RecoverCandy() // yield return の戻り値
     {
         this.counter = RecoverySeconds;
 
         // 1秒ずつカウントを進める
         while(counter > 0)
         {
-            yield return new WaitForSeconds(1.0f);
+            yield return new WaitForSeconds(1.0f);　// 1秒待って、呼び出し元に変えす　
             counter--;
         }
+
+        //WaitForSeconds クラスは YieldInstruction を継承しているため、コルーチンの要素として返すことで指定時間だけコルーチンの実行を待機できます。
+        //待機時間は、コンストラクタから指定します。
+
+
+
 
         candy++;
     }
