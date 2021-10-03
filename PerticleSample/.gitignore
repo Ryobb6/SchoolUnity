@@ -70,6 +70,10 @@ crashlytics-build.properties
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
 
+
+#------------ 暫定的な処理 ----------------#
+#PhotonとTextMeshProのfileが多すぎた...
+#file場所を分けるべきか...
 # TextMeshPro
 /[Aa]ssets/[Tt]extMesh Pro
 
