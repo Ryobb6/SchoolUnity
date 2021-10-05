@@ -79,3 +79,9 @@ crashlytics-build.properties
 
 # Photon
 /[Aa]ssets/[Pp]hoton
+
+# Probuilder
+/[Aa]ssets/[Ss]amples
+
+/[Aa]ssets/[Ss]tandard Assets
+/[Aa]ssets/[Ss]ampleScenes
