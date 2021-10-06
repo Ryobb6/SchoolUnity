@@ -4,21 +4,40 @@ using UnityEngine;
 
 public class SimpleMoveByVelocity : MonoBehaviour
 {
-    [SerializeField]private float velocityX;
-    private Vector3 vector;
+    [SerializeField] private Vector3 initialSpeed;
+    [SerializeField] private float speedScale = 1.0f;
+    [SerializeField] private bool initialSpeedApply = true;
     private Vector3 force;
+    private Vector3 pulsForce;
     private Rigidbody rg;
     void Start()
     {
-        this.vector = new Vector3(this.velocityX,0, 0);
+        this.force = initialSpeed;
         this.rg = GetComponent<Rigidbody>();
-        this.force = this.vector;
+        if (initialSpeedApply)
+        {
+            this.rg.AddForce(this.force, ForceMode.VelocityChange);
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
+        pulsForce.x = Input.GetAxis("Horizontal");
+        pulsForce.z = Input.GetAxis("Vertical");
+
+        if (Input.GetKey("z"))
+        {
+            pulsForce.y = 1.0f;
+        }
+
+        if (Input.GetKey("space"))
+        {
+            pulsForce.y = -1.0f;
+        }
+
+        this.pulsForce = speedScale * pulsForce.normalized;
          //  * Time.fixedDeltaTime*10
-        this.rg.AddForce(this.force, ForceMode.VelocityChange);
+        this.rg.AddForce(this.pulsForce, ForceMode.Force);
     }
 }
