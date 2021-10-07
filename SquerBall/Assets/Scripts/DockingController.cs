@@ -2,14 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-/// <summary>
-/// エリアに入った物体に対して、動作をつけるスクリプトです
-/// </summary>
-public class CapselAreaDetector : MonoBehaviour
+public class DockingController : MonoBehaviour
 {
     [SerializeField] private bool isHolding; //UI変更用
-    // Start is called before the first frame update
-    [SerializeField] private Vector3 destinatonPos;
+    
     private void Start()
     {
         isHolding = false;
@@ -32,13 +28,13 @@ public class CapselAreaDetector : MonoBehaviour
     {
         // コライダーに宇宙船が触れたら、rigidbodyを取得
         Rigidbody otherrgd = other.gameObject.GetComponent<Rigidbody>();
-        Vector3 direction = other.gameObject.transform.position - destinatonPos;
+        Vector3 direction = other.gameObject.transform.position - this.transform.position;
         direction.Normalize();
 
         // 減速
-        otherrgd.velocity *= 0.9f;
+        otherrgd.velocity *= 0.5f;
 
-        otherrgd.AddForce(direction * -100.0f, ForceMode.Acceleration);
+        otherrgd.AddForce(direction * -20.0f, ForceMode.Acceleration);
 
 
     }
@@ -47,6 +43,5 @@ public class CapselAreaDetector : MonoBehaviour
     {
         isHolding = false;
     }
-
-   
 }
+
