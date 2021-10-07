@@ -40,6 +40,6 @@ public class CapselAreaDetector : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        ;
     }
 }
