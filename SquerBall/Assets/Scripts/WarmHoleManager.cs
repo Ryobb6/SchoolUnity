@@ -7,12 +7,12 @@ public class WarmHoleManager : MonoBehaviour
     [SerializeField] ParticleSystem holeEnter;
     [SerializeField] ParticleSystem holeCenter;
     [SerializeField] ParticleSystem holeOut;
-    [SerializeField] bool isWarmHoleEngineStart;
+    [SerializeField] bool isWarmHoleEngineStart = false;
 
     private void Start()
     {
         
-        if (isWarmHoleEngineStart == true)
+        if (isWarmHoleEngineStart)
         {
             WarmHoleEngineStart();
         }

@@ -4,7 +4,20 @@ using UnityEngine;
 
 public class SpaceShipController : MonoBehaviour
 {
-    public float target_kmph_ = 100f;//時速100km
+    public float speed = 100f;//時速100km
+
+    public float Speed
+    {
+        get
+        {
+            return this.speed;
+        }
+        set
+        {
+            this.speed = value;
+        }
+    }
+
 
     void FixedUpdate()
     {
@@ -30,7 +43,7 @@ public class SpaceShipController : MonoBehaviour
         rb.AddTorque(Vector3.Cross(forward, horizontal_forward) * 1000f);
 
         //前進
-        var force = (rb.mass * rb.drag * target_kmph_ / 3.6f) / (1f - rb.drag * Time.fixedDeltaTime);
+        var force = (rb.mass * rb.drag * speed / 3.6f) / (1f - rb.drag * Time.fixedDeltaTime);
         rb.AddRelativeForce(new Vector3(0f, 0f, force));
     }
 }

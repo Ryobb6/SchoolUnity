@@ -20,6 +20,8 @@ public class CapselAreaDetector : MonoBehaviour
         isHolding = false;
     }
 
+    
+
     /// <summary>
     /// 現在のHolding状況を返します
     /// </summary>
@@ -28,6 +30,10 @@ public class CapselAreaDetector : MonoBehaviour
         get
         {
             return this.isHolding;
+        }
+        set
+        {
+            this.isHolding = value;
         }
     }
 
@@ -47,7 +53,15 @@ public class CapselAreaDetector : MonoBehaviour
         otherrgd.velocity *= decSpeedRate;
         // 目的地に向かって、力を加えます
         otherrgd.AddForce(direction * -1.0f * speedToDest, ForceMode.Acceleration);
-       
+
+
+        // isHoldingがfalseとなった場合、速度0
+        if (!isHolding)
+        {
+            Rigidbody rd = other.GetComponent<Rigidbody>();
+            rd.velocity = Vector3.one;
+        }
+
     }
 
     private void OnTriggerExit(Collider other)
