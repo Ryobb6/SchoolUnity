@@ -25,7 +25,6 @@ public class SelfRotation : MonoBehaviour
         starCenter = transform.position;
     }
 
-
     private void Update()
     {
         // 中心点の周りを、軸axisで、starSelfRotPeriod周期で円運動

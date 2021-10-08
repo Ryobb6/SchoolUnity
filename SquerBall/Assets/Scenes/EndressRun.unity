@@ -7389,7 +7389,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5bdc3f605651973489968c0e5b2f5bb0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target_kmph_: 2000
+  target_kmph_: 500
+--- !u!114 &1188116793
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1188116791}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34b5d60b1c0e41742ae4413da2249aa7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  texts:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  gameObjects:
+  - {fileID: 1265103382}
+  - {fileID: 656562112}
+  - {fileID: 1525113152}
+  - {fileID: 1904159736}
+  - {fileID: 110145941}
+  - {fileID: 2034483049}
+  - {fileID: 1434971924}
+  - {fileID: 566130483}
+  - {fileID: 1273802863}
+  - {fileID: 11921740}
 --- !u!4 &1188116798 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 7b5c9227d177ec248a8349ac8e0965be,
@@ -7576,21 +7610,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 5427505523100728287}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1265103388
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1265103382}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dfd6f93646f05b84696519c059a0a124, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  starCenter: {x: 0, y: 0, z: 0}
-  starAxis: {x: 0, y: 1, z: 0}
-  starSelfRotPeriod: 25
 --- !u!1 &1273802863
 GameObject:
   m_ObjectHideFlags: 0
@@ -9224,6 +9243,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6910238489367321726, guid: 950b0b8f65c63844ea71db3b7bf30858,
+        type: 3}
+      propertyPath: m_Text
+      value: 'WarmPort : Solar System'
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 950b0b8f65c63844ea71db3b7bf30858, type: 3}
