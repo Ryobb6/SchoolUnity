@@ -13,17 +13,7 @@ public class JointAction : MonoBehaviour
         /// とおってきた道(Road)の、スクリプトを切る
         cad = FromRoadObject.GetComponent<CapselAreaDetector>();
         cad.enabled = false;
+        this.GetComponent<SphereCollider>().enabled = false;
     }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    
 }

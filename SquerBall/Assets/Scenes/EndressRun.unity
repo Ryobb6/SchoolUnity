@@ -5722,28 +5722,6 @@ MonoBehaviour:
   starCenter: {x: 0, y: 0, z: 0}
   starAxis: {x: 0, y: 1, z: 0}
   starSelfRotPeriod: 88
---- !u!1 &402981127 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6134360382707646230, guid: 950b0b8f65c63844ea71db3b7bf30858,
-    type: 3}
-  m_PrefabInstance: {fileID: 6134360381634179290}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &402981131
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 402981127}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a03e8d34daea10843be534ced1387569, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  holeEnter: {fileID: 1874471827}
-  holeCenter: {fileID: 874084726}
-  holeOut: {fileID: 2890842725468040167}
-  isWarmHoleEngineStart: 1
 --- !u!1 &483897839
 GameObject:
   m_ObjectHideFlags: 0
@@ -5966,12 +5944,6 @@ TrailRenderer:
   m_MinVertexDistance: 0.1
   m_Autodestruct: 0
   m_Emitting: 1
---- !u!1 &525174885 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2614842968458201085, guid: 950b0b8f65c63844ea71db3b7bf30858,
-    type: 3}
-  m_PrefabInstance: {fileID: 6134360381634179290}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &533084442
 GameObject:
   m_ObjectHideFlags: 0
@@ -6456,25 +6428,6 @@ Light:
     type: 3}
   m_PrefabInstance: {fileID: 5427505523100728287}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &761868625 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8885714323676555846, guid: 950b0b8f65c63844ea71db3b7bf30858,
-    type: 3}
-  m_PrefabInstance: {fileID: 6134360381634179290}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &761868630
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 761868625}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d3ac3a107b94c474abf7c9bb2696f8a4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  FromRoadObject: {fileID: 525174885}
 --- !u!1 &784841429
 GameObject:
   m_ObjectHideFlags: 0
@@ -6522,12 +6475,6 @@ MonoBehaviour:
   starCenter: {x: 0, y: 0, z: 0}
   starAxis: {x: 0, y: 1, z: 0}
   starSelfRotPeriod: 60225
---- !u!198 &874084726 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 6134360382785820932, guid: 950b0b8f65c63844ea71db3b7bf30858,
-    type: 3}
-  m_PrefabInstance: {fileID: 6134360381634179290}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &918554688
 GameObject:
   m_ObjectHideFlags: 0
@@ -6933,6 +6880,19 @@ MonoBehaviour:
   m_target: {fileID: 1252670689}
   m_speed: 5
   m_attenuation: 0.5
+--- !u!114 &1188116793
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1188116791}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89983ab76343b994e870bec5b7cf1623, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetObject: {fileID: 1252670688}
 --- !u!1 &1239256983
 GameObject:
   m_ObjectHideFlags: 0
@@ -6991,9 +6951,9 @@ GameObject:
   - component: {fileID: 1252670689}
   - component: {fileID: 1252670694}
   - component: {fileID: 1252670693}
-  - component: {fileID: 1252670692}
   - component: {fileID: 1252670691}
   - component: {fileID: 1252670690}
+  - component: {fileID: 1252670695}
   m_Layer: 0
   m_Name: Target
   m_TagString: Untagged
@@ -7028,8 +6988,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   initialSpeed: {x: 0, y: 0, z: 1}
-  speedScale: 50
-  initialSpeedApply: 1
+  speedScale: 10000
+  initialSpeedApply: 0
   torqueSpeed: 30
 --- !u!54 &1252670691
 Rigidbody:
@@ -7047,19 +7007,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!65 &1252670692
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1252670688}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1252670693
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -7078,7 +7025,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 00c023332ee39524d930d2cf6981aaa2, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -7106,7 +7053,20 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1252670688}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!135 &1252670695
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1252670688}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1265103382 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5427505523064276382, guid: f7563726a580bf14c825c1969720f2c2,
@@ -7963,12 +7923,6 @@ MonoBehaviour:
   starCenter: {x: 0, y: 0, z: 0}
   starAxis: {x: 0, y: 1, z: 0}
   starSelfRotPeriod: 27.3
---- !u!198 &1874471827 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 6134360383355935626, guid: 950b0b8f65c63844ea71db3b7bf30858,
-    type: 3}
-  m_PrefabInstance: {fileID: 6134360381634179290}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1904159736
 GameObject:
   m_ObjectHideFlags: 0
@@ -8271,12 +8225,6 @@ MonoBehaviour:
   starCenter: {x: 0, y: 0, z: 0}
   starAxis: {x: 0, y: 1, z: 0}
   starSelfRotPeriod: 10585
---- !u!198 &2890842725468040167 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 2890842725468040167, guid: 950b0b8f65c63844ea71db3b7bf30858,
-    type: 3}
-  m_PrefabInstance: {fileID: 6134360381634179290}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5427505523100728287
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8422,21 +8370,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 16415258158670027, guid: 950b0b8f65c63844ea71db3b7bf30858,
-        type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2890842725468040167, guid: 950b0b8f65c63844ea71db3b7bf30858,
-        type: 3}
-      propertyPath: EmissionModule.enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2976529842656937289, guid: 950b0b8f65c63844ea71db3b7bf30858,
-        type: 3}
-      propertyPath: speedToDest
-      value: 300
-      objectReference: {fileID: 0}
     - target: {fileID: 6134360382209609906, guid: 950b0b8f65c63844ea71db3b7bf30858,
         type: 3}
       propertyPath: m_Name
@@ -8497,20 +8430,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6134360382785820932, guid: 950b0b8f65c63844ea71db3b7bf30858,
+    - target: {fileID: 6523659555613633407, guid: 950b0b8f65c63844ea71db3b7bf30858,
         type: 3}
-      propertyPath: EmissionModule.enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6134360383355935626, guid: 950b0b8f65c63844ea71db3b7bf30858,
-        type: 3}
-      propertyPath: EmissionModule.enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6134360383355935639, guid: 950b0b8f65c63844ea71db3b7bf30858,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
+      propertyPath: speedToDest
+      value: 10000
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 950b0b8f65c63844ea71db3b7bf30858, type: 3}

@@ -262,8 +262,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   initialSpeed: {x: -1, y: 0, z: 0}
-  speedScale: 20
-  initialSpeedApply: 1
+  speedScale: 1000
+  initialSpeedApply: 0
   torqueSpeed: 1
 --- !u!1 &1548060394
 GameObject:
@@ -525,6 +525,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isHolding: 0
+--- !u!114 &1890797334
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1890797327}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3ac3a107b94c474abf7c9bb2696f8a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FromRoadObject: {fileID: 2109218452}
 --- !u!1 &2109218452 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6991276511537937333, guid: 20b8ccbc35301b64f80a1d2bc39e4546,
@@ -545,7 +558,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isHolding: 0
   decSpeedRate: 0.9
-  destinatonPos: {x: 0, y: 0, z: 0}
   speedToDest: 50
   destinationObject: {fileID: 3162082997797135268}
 --- !u!23 &1371584395372758352

@@ -25,28 +25,27 @@ public class SimpleMoveByVelocity : MonoBehaviour
     
     void Update()
     {
-        // GameObjectタグによって、回転の挙動を分けます
-        // tagがないときは、回転させません
-
+        
         // 水平方向
-        if(Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.LeftArrow))
+        if(Input.GetKeyDown(KeyCode.RightArrow) | Input.GetKeyDown(KeyCode.LeftArrow))
         {
-            HorizontalMove();
+            HorizontalMove(Input.GetAxis("Horizontal"));
+           
         }
 
         //前後方向
-        if (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.DownArrow))
+        if (Input.GetKeyDown(KeyCode.UpArrow) | Input.GetKeyDown(KeyCode.DownArrow))
         {
-            VerticalMove();
+            VerticalMove(Input.GetAxis("Vertical"));
         }
 
 
-        if (Input.GetKey("z"))
+        if (Input.GetKeyDown(KeyCode.Z))
         {
             UpMove();
         }
 
-        if (Input.GetKey("space"))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             DownMove();
         }
@@ -54,68 +53,39 @@ public class SimpleMoveByVelocity : MonoBehaviour
         
     }
 
-    public void HorizontalMove()
+    public void HorizontalMove(float x)
     {
         // 水平方向
-        if (gameObject.tag == "SpaceShip")
-        {
-            float valueX = Input.GetAxis("Horizontal");
-            pulsForce.x = valueX;
-            this.rg.AddTorque(new Vector3(0, torqueSpeed * valueX, 0));
-        }
-        else
-        {
-            pulsForce.x = Input.GetAxis("Horizontal");
-        }
-        
-        ForceExecute();
+        Vector3 vector = new Vector3(x, 0, 0);
+        ForceExecute(vector);
     }
 
-    public void VerticalMove()
+    public void VerticalMove(float z)
     {
-        if (gameObject.tag == "SpaceShip")
-        {
-            float valueY = Input.GetAxis("Vertical");
-            pulsForce.z = valueY;
-            this.rg.AddTorque(new Vector3(0, 0, torqueSpeed * valueY));
-        }
-        else
-        {
-            pulsForce.z = Input.GetAxis("Vertical");
-        }
-
-        ForceExecute();
+        Vector3 vector = new Vector3(0, 0, z);
+        ForceExecute(vector);
     }
 
     public void UpMove()
     {
-        pulsForce.y = 1.0f;
-        if (gameObject.tag == "SpaceShip")
-        {
-            this.rg.AddTorque(new Vector3(torqueSpeed * 1.0f, 0, 0));
-        }
-
-        ForceExecute();
+        Vector3 vector = new Vector3(0, 1.0f, 0);
+        ForceExecute(vector);
     }
 
     public void DownMove()
     {
-        pulsForce.y = -1.0f;
-        if (gameObject.tag == "SpaceShip")
-        {
-            this.rg.AddTorque(new Vector3(torqueSpeed * -1.0f, 0, 0));
-        }
-
-        ForceExecute();
+        Vector3 vector = new Vector3(0, -1.0f, 0);
+        ForceExecute(vector);
     }
 
     /// <summary>
     /// 力を加えます
     /// </summary>
-    private void ForceExecute()
+    private void ForceExecute(Vector3 vector)
     {
-        pulsForce = speedScale * pulsForce.normalized;
-        rg.AddForce(this.pulsForce, ForceMode.Force);
+        pulsForce = speedScale * vector.normalized;
+        Debug.Log(pulsForce.x + ":" + pulsForce.y + ":" + pulsForce.z);
+        rg.AddForce(pulsForce, ForceMode.Force);
     }
 
 }
