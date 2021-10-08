@@ -4,15 +4,11 @@ using UnityEngine;
 
 public class Warp : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
+    [SerializeField] GameObject targetPort;
         
+    private void OnTriggerEnter(Collider other)
+    {
+        other.transform.position = Vector3.Lerp(other.transform.position, targetPort.transform.position, 1.0f);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

@@ -7,7 +7,7 @@ public class SimpleMoveByVelocity : MonoBehaviour
     [SerializeField] private Vector3 initialSpeed;
     [SerializeField] private float speedScale = 1.0f;
     [SerializeField] private bool initialSpeedApply = true;
-    [SerializeField] private float torqueSpeed=1.0f;
+    
 
     private Vector3 force;
     private Vector3 pulsForce;
