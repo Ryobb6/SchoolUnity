@@ -31,53 +31,91 @@ public class SimpleMoveByVelocity : MonoBehaviour
         // 水平方向
         if(Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.LeftArrow))
         {
-            if (gameObject.tag == "SpaceShip")
-            {
-                float valueX = Input.GetAxis("Horizontal");
-                pulsForce.x = valueX;
-                this.rg.AddTorque(new Vector3(0, torqueSpeed * valueX, 0));
-            }
-            else
-            {
-                pulsForce.x = Input.GetAxis("Horizontal");
-            }
+            HorizontalMove();
         }
 
         //前後方向
         if (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.DownArrow))
         {
-            if (gameObject.tag == "SpaceShip")
-            {
-                float valueY = Input.GetAxis("Vertical");
-                pulsForce.x = valueY;
-                this.rg.AddTorque(new Vector3(0, 0, torqueSpeed * valueY));
-            }
-            else
-            {
-                pulsForce.x = Input.GetAxis("Vertical");
-            }
+            VerticalMove();
         }
 
 
         if (Input.GetKey("z"))
         {
-            pulsForce.y = 1.0f;
-            if(gameObject.tag == "SpaceShip")
-            {
-                this.rg.AddTorque(new Vector3(torqueSpeed * 1.0f, 0, 0));
-            }
+            UpMove();
         }
 
         if (Input.GetKey("space"))
         {
-            pulsForce.y = -1.0f;
-            if (gameObject.tag == "SpaceShip")
-            {
-                this.rg.AddTorque(new Vector3(torqueSpeed * -1.0f, 0, 0));
-            }
+            DownMove();
         }
 
-        this.pulsForce = speedScale * pulsForce.normalized;
-        this.rg.AddForce(this.pulsForce, ForceMode.Force);
+        
     }
+
+    public void HorizontalMove()
+    {
+        // 水平方向
+        if (gameObject.tag == "SpaceShip")
+        {
+            float valueX = Input.GetAxis("Horizontal");
+            pulsForce.x = valueX;
+            this.rg.AddTorque(new Vector3(0, torqueSpeed * valueX, 0));
+        }
+        else
+        {
+            pulsForce.x = Input.GetAxis("Horizontal");
+        }
+        
+        ForceExecute();
+    }
+
+    public void VerticalMove()
+    {
+        if (gameObject.tag == "SpaceShip")
+        {
+            float valueY = Input.GetAxis("Vertical");
+            pulsForce.z = valueY;
+            this.rg.AddTorque(new Vector3(0, 0, torqueSpeed * valueY));
+        }
+        else
+        {
+            pulsForce.z = Input.GetAxis("Vertical");
+        }
+
+        ForceExecute();
+    }
+
+    public void UpMove()
+    {
+        pulsForce.y = 1.0f;
+        if (gameObject.tag == "SpaceShip")
+        {
+            this.rg.AddTorque(new Vector3(torqueSpeed * 1.0f, 0, 0));
+        }
+
+        ForceExecute();
+    }
+
+    public void DownMove()
+    {
+        pulsForce.y = -1.0f;
+        if (gameObject.tag == "SpaceShip")
+        {
+            this.rg.AddTorque(new Vector3(torqueSpeed * -1.0f, 0, 0));
+        }
+
+        ForceExecute();
+    }
+
+    /// <summary>
+    /// 力を加えます
+    /// </summary>
+    private void ForceExecute()
+    {
+        pulsForce = speedScale * pulsForce.normalized;
+        rg.AddForce(this.pulsForce, ForceMode.Force);
+    }
+
 }
