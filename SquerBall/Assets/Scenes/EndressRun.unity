@@ -4331,6 +4331,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6134360382707646228, guid: 950b0b8f65c63844ea71db3b7bf30858,
+        type: 3}
+      propertyPath: startDelay.scalar
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6910238489367321726, guid: 950b0b8f65c63844ea71db3b7bf30858,
         type: 3}
       propertyPath: m_Text
