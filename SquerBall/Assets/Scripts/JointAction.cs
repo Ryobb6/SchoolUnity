@@ -10,7 +10,7 @@ public class JointAction : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
        // 当たったオブジェクト(SpaceShipの速度を0にする)      
-        other.GetComponent<SpaceShipController>().Speed= 0f;
+        other.GetComponent<SpaceShipController>().Speed = 0f;
     }
 
     private void OnTriggerExit(Collider other)

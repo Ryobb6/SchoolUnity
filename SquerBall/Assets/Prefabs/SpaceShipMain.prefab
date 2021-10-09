@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6359467249022645331}
   - component: {fileID: 5288406288982125383}
   - component: {fileID: 5058199982258978323}
-  - component: {fileID: 5058199983794300456}
+  - component: {fileID: 1191976692}
   m_Layer: 0
   m_Name: SpaceShipMain
   m_TagString: SpaceShip
@@ -28,7 +28,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4647024083088408719}
-  m_LocalRotation: {x: 0.000000021855694, y: 0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 60891, y: 1416, z: -32658}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -119,7 +119,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 69.05469, y: 23.242855, z: 111.719864}
   m_Center: {x: 1.140625, y: 0, z: 0}
---- !u!114 &5058199983794300456
+--- !u!114 &1191976692
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -128,10 +128,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 4647024083088408719}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5bdc3f605651973489968c0e5b2f5bb0, type: 3}
+  m_Script: {fileID: 11500000, guid: c8646eec47e838e4597ec08769033e4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 100
+  speed: 10
+  moveForceMultiplier: 5
+  yawTorqueMagnitude: 30
+  pitchTorqueMagnitude: 60
+  rollTorqueMagnitude: 30
+  restoringTorqueMagnitude: 100
 --- !u!1 &5058199981900093266
 GameObject:
   m_ObjectHideFlags: 0
