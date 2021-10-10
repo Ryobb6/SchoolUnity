@@ -9,4 +9,19 @@ public class TitleController : MonoBehaviour
     {
         SceneManager.LoadScene("EndressRun");
     }
+
+   public void OnEndressRunClicked()
+    {
+        SceneManager.LoadScene("EndressRun");
+    }
+
+   public void OnEntranceJupiterClicked()
+    {
+        SceneManager.LoadScene("Jupitar");
+    }
+
+   public void OnEntranceEarthClicked()
+    {
+        SceneManager.LoadScene("Earth");
+    }
 }
