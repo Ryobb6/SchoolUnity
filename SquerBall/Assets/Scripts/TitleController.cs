@@ -24,4 +24,16 @@ public class TitleController : MonoBehaviour
     {
         SceneManager.LoadScene("Earth");
     }
+    /// <summary>
+    /// 終了ボタン
+    /// </summary>
+    public void OnExitButtonClicked() 
+    {
+        Application.Quit();
+    }
+    public void OnBackToTitleButtonClicked()
+    {
+        SceneManager.LoadScene("GameTitle");
+    }
+    
 }
