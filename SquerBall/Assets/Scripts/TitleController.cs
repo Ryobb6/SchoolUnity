@@ -7,7 +7,7 @@ public class TitleController : MonoBehaviour
 {
    public void OnStartButtonClicked()
     {
-        SceneManager.LoadScene("EndressRun");
+        SceneManager.LoadScene("SelectGame");
     }
 
    public void OnEndressRunClicked()
