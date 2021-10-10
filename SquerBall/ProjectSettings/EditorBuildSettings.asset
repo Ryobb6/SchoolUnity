@@ -5,9 +5,6 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/GameTitle.unity
     guid: a291a1ffe651d4a2893acfc97a35443b
@@ -15,9 +12,12 @@ EditorBuildSettings:
     path: Assets/Scenes/SelectGame.unity
     guid: 75107bdb5efb54e33b6193039a8ea60d
   - enabled: 1
-    path: Assets/Scenes/EndressRun.unity
-    guid: 9fc0d4010bbf28b4594072e72b8655ab
-  - enabled: 1
     path: Assets/Scenes/Earth.unity
     guid: fadb46bb25292884cb13fe262172f219
+  - enabled: 1
+    path: Assets/Scenes/JupitarRun.unity
+    guid: d1556fd3a5ae9db46995eb5c1d5e58f2
+  - enabled: 1
+    path: Assets/Scenes/EndressRun.unity
+    guid: 9fc0d4010bbf28b4594072e72b8655ab
   m_configObjects: {}

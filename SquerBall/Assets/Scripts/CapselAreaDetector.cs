@@ -9,7 +9,7 @@ public class CapselAreaDetector : MonoBehaviour
 {
     [SerializeField] private bool isHolding; //UI変更用
     [SerializeField] private float decSpeedRate; // コライダに入った時の減速率
-    [SerializeField] private float speedToDest; // 目的地へ向かう速度
+    [SerializeField] private float speedToDest = 0; // 目的地へ向かう速度
     [SerializeField] GameObject destinationObject; // 目的地の座標を持つオブジェクト
 
     private Vector3 destinatonPos; // コライダに入った時に向かうべき方向

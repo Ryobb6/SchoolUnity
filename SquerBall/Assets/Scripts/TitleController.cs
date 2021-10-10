@@ -17,7 +17,7 @@ public class TitleController : MonoBehaviour
 
    public void OnEntranceJupiterClicked()
     {
-        SceneManager.LoadScene("Jupitar");
+        SceneManager.LoadScene("JupitarRun");
     }
 
    public void OnEntranceEarthClicked()
@@ -34,6 +34,11 @@ public class TitleController : MonoBehaviour
     public void OnBackToTitleButtonClicked()
     {
         SceneManager.LoadScene("GameTitle");
+    }
+
+    public void OnbackToGameSelectButton()
+    {
+        SceneManager.LoadScene("SelectGame");
     }
     
 }

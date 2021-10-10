@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ShipMoveController : MonoBehaviour
 {
-    [SerializeField]private Transform m_target;
+    [SerializeField]private Transform m_target = null;
     [SerializeField] private float m_speed = 5;
     [SerializeField] private float m_attenuation = 0.5f;
 

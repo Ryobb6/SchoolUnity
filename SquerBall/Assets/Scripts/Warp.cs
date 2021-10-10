@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Warp : MonoBehaviour
 {
-    [SerializeField] GameObject targetPort;
+    [SerializeField] GameObject targetPort ;
         
     private void OnTriggerEnter(Collider other)
     {
