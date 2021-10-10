@@ -1607,6 +1607,16 @@ PrefabInstance:
       propertyPath: m_Radius
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 5049084263877059670, guid: 950b0b8f65c63844ea71db3b7bf30858,
+        type: 3}
+      propertyPath: targetObject
+      value: 
+      objectReference: {fileID: 770983709}
+    - target: {fileID: 5049084263877059670, guid: 950b0b8f65c63844ea71db3b7bf30858,
+        type: 3}
+      propertyPath: applySpeed
+      value: 500
+      objectReference: {fileID: 0}
     - target: {fileID: 6134360382209609906, guid: 950b0b8f65c63844ea71db3b7bf30858,
         type: 3}
       propertyPath: m_Name
@@ -3964,6 +3974,18 @@ PrefabInstance:
       propertyPath: moveForceMultiplier
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1191976692, guid: 387f371867ba70a4582ff540c8b52b7f, type: 3}
+      propertyPath: yawTorqueMagnitude
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 1191976692, guid: 387f371867ba70a4582ff540c8b52b7f, type: 3}
+      propertyPath: pitchTorqueMagnitude
+      value: 70
+      objectReference: {fileID: 0}
+    - target: {fileID: 1191976692, guid: 387f371867ba70a4582ff540c8b52b7f, type: 3}
+      propertyPath: rollTorqueMagnitude
+      value: 40
+      objectReference: {fileID: 0}
     - target: {fileID: 4647024083088408719, guid: 387f371867ba70a4582ff540c8b52b7f,
         type: 3}
       propertyPath: m_Name
@@ -4335,6 +4357,16 @@ PrefabInstance:
         type: 3}
       propertyPath: decSpeedRate
       value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 5049084263877059670, guid: 950b0b8f65c63844ea71db3b7bf30858,
+        type: 3}
+      propertyPath: targetObject
+      value: 
+      objectReference: {fileID: 770983709}
+    - target: {fileID: 5049084263877059670, guid: 950b0b8f65c63844ea71db3b7bf30858,
+        type: 3}
+      propertyPath: applySpeed
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 6083793080517261991, guid: 950b0b8f65c63844ea71db3b7bf30858,
         type: 3}
