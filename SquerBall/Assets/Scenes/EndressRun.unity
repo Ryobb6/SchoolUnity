@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.009786322, g: 0.05188985, b: 0.15229288, a: 1}
+  m_IndirectSpecularColor: {r: 0.009782872, g: 0.051867522, b: 0.15223652, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -409,7 +409,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   starCenter: {x: 0, y: 0, z: 0}
   starAxis: {x: 0, y: 1, z: 0}
-  starSelfRotPeriod: 225
+  starSelfRotPeriod: -225
 --- !u!1 &110145941
 GameObject:
   m_ObjectHideFlags: 0
@@ -3155,7 +3155,6 @@ GameObject:
   - component: {fileID: 1525113154}
   - component: {fileID: 1525113153}
   - component: {fileID: 1525113157}
-  - component: {fileID: 1525113158}
   - component: {fileID: 1525113159}
   m_Layer: 0
   m_Name: Venus
@@ -3255,22 +3254,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &1525113158
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1525113152}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dcfcd01d8b9c8c34da6d68bf898fb7d2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _center: {x: 0, y: 0, z: 0}
-  _axis: {x: 0, y: 1, z: 0}
-  _period: -243
-  _updateRotation: 1
 --- !u!114 &1525113159
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3285,7 +3268,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   starCenter: {x: 0, y: 0, z: 0}
   starAxis: {x: 0, y: 1, z: 0}
-  starSelfRotPeriod: 25
+  starSelfRotPeriod: 78
 --- !u!1 &1546611779
 GameObject:
   m_ObjectHideFlags: 0
