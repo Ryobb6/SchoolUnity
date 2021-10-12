@@ -24,7 +24,7 @@ public class NewSpaceShipController : MonoBehaviour
 
     private float GetSelfForwardAxis()
     {
-        return this.transform.local;
+        return 1.0f;
     }
 
     private void AxleForward()
