@@ -50,6 +50,7 @@ public class UIManager : MonoBehaviour
     /// </summary>
     public void OnsearchClick()
     {
+        // このコルーチン内で、別のコルーチンを実行して終わるまで待つ
         StartCoroutine(ConnectApiFindZipcodeData());
     }
 
@@ -64,6 +65,7 @@ public class UIManager : MonoBehaviour
     {
         // 郵便番号を取得
         // yield return でコルーチンを実行することでコルーチンの処理が終わるまで待機
+        // 別のコルーチンを実行して終わるまで待つ
         yield return StartCoroutine(connectAPI.GetZipcode(Zipnum()));
 
         // 画面表示

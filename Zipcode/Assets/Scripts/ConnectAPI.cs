@@ -30,8 +30,9 @@ public class ConnectAPI : MonoBehaviour
     }
 
     /// <summary>
-    /// ネット接続用の処理
+    /// ネット接続用の処理 
     /// GETメソッド (JSONの取得)
+    /// zipnumは入力されるzipcode
     /// </summary>
     /// <param name="zipnum"></param>
     ///<returns></returns>
