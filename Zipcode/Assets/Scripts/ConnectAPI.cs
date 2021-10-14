@@ -39,12 +39,15 @@ public class ConnectAPI : MonoBehaviour
    
     public IEnumerator GetZipcode(string zipnum)
     {
+        // UnityWebRequest.Get(URL + zipnum)は指定したURLへGETリクエストを送る
+        // UnityWebRequestURIからデータを取得するオブジェクト
         UnityWebRequest request = UnityWebRequest.Get(URL + zipnum);
        
-        //レスポンスが返ってくるまで実行を待つ
+        //リクエストを送り、レスポンスが返ってくるまで実行を待つ
         yield return request.SendWebRequest();
 
         // エラーが起きた場合はログを返す
+        // このUnityWebRequestでシステムエラーが発生した後、trueを返します。 
         if (request.isNetworkError)
         {
             Debug.Log(request.error);
@@ -54,14 +57,15 @@ public class ConnectAPI : MonoBehaviour
         {
             // デバッグ用表示
             Debug.Log("GetZipcode : " + request.downloadHandler.text);
-
-            zipcodeData = JsonUtility.FromJson<ZipcodeData>(request.downloadHandler.text);
-
+            // JsonUtility.FromJson(json) : JSONtextデータからオブジェクトを作成します 
+            // json : JSONtextデータ : request.downloadHandler.text : jsonテキスト
+            zipcodeData = JsonUtility.FromJson<ZipcodeData>(request.downloadHandler.text); 
+            
         }
 
     }
     
     
-    // Start is called before the first frame update
+
    
 }

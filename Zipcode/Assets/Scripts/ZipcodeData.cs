@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[System.Serializable]
+[System.Serializable] // 条件1
 
 public class ZipcodeData
 {
-    // 要件をみたしたクラス
+    // publicである  条件2  static , constはついていないのが条件
     public string address1;
     public string address2;
     public string address3;
@@ -14,4 +14,5 @@ public class ZipcodeData
     public string kana2;
     public string kana3;
     public string zipcode;
+    
 }
