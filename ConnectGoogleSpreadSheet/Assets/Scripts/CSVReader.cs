@@ -4,19 +4,29 @@ using UnityEngine;
 using UnityEngine.Networking;
 using System.IO;
 
+/// <summary>
+/// Googleのスプレッドシートから、読み取りを行う為のクラス
+/// </summary>
 public class CSVReader : MonoBehaviour
 {
     // リンク https://docs.google.com/spreadsheets/d/121fsll0Qx3UcPNGFqrD0G6F3QoHJ2XsrG8D2MAq1sU4/edit?usp=sharing
     const string SHEET_ID = "121fsll0Qx3UcPNGFqrD0G6F3QoHJ2XsrG8D2MAq1sU4"; // シートID(上記URLのd/~/editの~部分)
     const string SHEET_NAME = "シート1"; // シートの下に書いているシート名
 
-    // コルーチンの開始
+    /// <summary>
+    /// コルーチンの開始(Jason無しで、読み取りのみ行う際のボタン)
+    /// </summary>
+
     public void OnClickLoadingButton()
     {
         StartCoroutine(Method(SHEET_NAME));
     }
 
-    // コルーチンの定義
+    /// <summary>
+    ///  コルーチンの定義(Json無し用)
+    /// </summary>
+    /// <param name=""></param>
+
     IEnumerator Method(string _SHEET_NAME)
     {
         // GetRequestの送信 1.request インスタンスの作成
@@ -40,7 +50,7 @@ public class CSVReader : MonoBehaviour
     }
 
     /// <summary>
-    /// Downloadhandlerにて取得した文字列を文字列型配列リストに変換する
+    /// Downloadhandlerにて取得した文字列を文字列型配列リストに変換する(Json無し用)
     /// </summary>
     /// <param name="_text"></param>
     /// <returns></returns>
@@ -65,4 +75,21 @@ public class CSVReader : MonoBehaviour
         }
         return characterDataArrayList;
     }
+
+
+
+    /// <summary>
+    /// GASからJASONを読み込む為のボタン
+    /// </summary>
+
+    public void OnClickLoadingJSONfmGAS()
+    {
+        ConnectManager conn = new ConnectManager();
+        conn.SampleWebConnectionPost();
+        StartCoroutine(conn.SampleWebConnectionPost()); // シートは1で同じとする
+    }
+
+
+
+
 }
