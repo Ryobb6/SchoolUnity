@@ -10,7 +10,7 @@ public class PlayerMoveManager : MonoBehaviour
 
     private Animator _animator;
     private CharacterController _characterController;
-    string _runHash;
+    bool _runHash = false;
 
     [SerializeField] private float _moveSpeed;
     [SerializeField] private float _rotateSpeed;
@@ -52,7 +52,7 @@ public class PlayerMoveManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // コンポーネントのforwardのグローバルなベクトルを取得
+        // そのコンポーネントにとってのforward(前)を指す、グローバルなベクトルを取得
         Vector3 cameraForward = _cameraTransform.forward;
         cameraForward.y = 0;
 
@@ -78,11 +78,11 @@ public class PlayerMoveManager : MonoBehaviour
             Quaternion lookDirection = Quaternion.LookRotation(moveDirection);
             _transform.rotation = Quaternion.Slerp(_transform.rotation, lookDirection, _rotateSpeed * Time.deltaTime);
 
-            _animator.SetBool(_runHash, false);
+            _animator.SetBool("_runHash", true);
         }
         else
         {
-            _animator.SetBool(_runHash, true);
+            _animator.SetBool("_runHash", false);
         }
 
         // Vector3 temp = _transform.TransformDirection(moveDirection); // ローカル座標をワールド座標へ変換
